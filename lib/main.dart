@@ -39,7 +39,7 @@ class MyHomePage extends StatelessWidget {
           children: [
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Text(
+              child: const Text(
                 'Not sure about exactly which recipe you\'re looking for? Do a search, or dive into our most popular categories.',
                 textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 16),
