@@ -84,7 +84,7 @@ class MyHomePage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 60.0),
+            padding: EdgeInsets.symmetric(horizontal: 60.0),
             child: Text(title, style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
           ),
           GridView.builder(
