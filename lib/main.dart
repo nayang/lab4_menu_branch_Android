@@ -138,7 +138,7 @@ class MyHomePage extends StatelessWidget {
           image: AssetImage(item['image']!),
           fit: BoxFit.cover,
         ),
-        borderRadius: BorderRadius.circular(80),
+        borderRadius: BorderRadius.circular(81),
       ),
       alignment: Alignment.center,
       child: Text(
