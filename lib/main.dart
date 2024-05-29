@@ -36,6 +36,7 @@ class MyHomePage extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Column(
+          mainAxisAlignment:MainAxisAlignment.spaceBetween,
           children: [
             Padding(
               padding: const EdgeInsets.all(8.0),
@@ -87,19 +88,9 @@ class MyHomePage extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 60.0),
             child: Text(title, style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
           ),
-          GridView.builder(
-            padding: const EdgeInsets.symmetric(horizontal: 30.0),
-            shrinkWrap: true,
-            physics: const NeverScrollableScrollPhysics(),
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 4,
-              crossAxisSpacing: 40,
-              mainAxisSpacing: 20,
-            ),
-            itemCount: items.length,
-            itemBuilder: (context, index) {
-              return useStack ? imageWithTextOverlay(items[index]) : imageOnly(items[index]);
-            },
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: items.map((item) => useStack ? imageWithTextOverlay(item) : imageOnly(item)).toList(),
           ),
         ],
       ),
@@ -108,6 +99,8 @@ class MyHomePage extends StatelessWidget {
 
   Widget imageWithTextOverlay(Map<String, String> item) {
     return Container(
+      height: 100,
+      width: 100,
       decoration: BoxDecoration(
         image: DecorationImage(
           image: AssetImage(item['image']!),
@@ -133,6 +126,8 @@ class MyHomePage extends StatelessWidget {
 
   Widget imageOnly(Map<String, String> item) {
     return Container(
+      height: 100,
+      width: 100,
       decoration: BoxDecoration(
         image: DecorationImage(
           image: AssetImage(item['image']!),
